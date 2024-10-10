@@ -50,19 +50,47 @@
             display: flex;
             gap: 10px;
         }
-        .nav-button, .discord-button, .youtube-button {
-            text-decoration: none;
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: transparent;
             color: #00E5FF;
             font-weight: 700;
             padding: 12px 20px; 
             border: 2px solid #00E5FF;
             border-radius: 5px;
-            background-color: transparent;
-            transition: transform 0.3s;
-            font-size: 16px;
+            cursor: pointer;
         }
-        .nav-button:hover, .discord-button:hover, .youtube-button:hover {
-            transform: translateY(-3px);
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(20, 20, 20, 0.9);
+            min-width: 160px;
+            z-index: 1;
+            border: 2px solid #00E5FF;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown-content a {
+            color: #00E5FF;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #00BFFF;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         #home {
@@ -79,6 +107,7 @@
             max-width: 40%; 
             height: auto; 
         }
+
         .content {
             display: none; 
             background-color: rgba(20, 20, 20, 0.9);
@@ -102,10 +131,6 @@
                 justify-content: center;
                 gap: 5px;
             }
-            .nav-button, .discord-button, .youtube-button {
-                padding: 10px 15px; 
-                font-size: 14px; 
-            }
             #logo {
                 max-width: 90%;
             }
@@ -126,11 +151,16 @@
         <div class="star" style="top: 80%; left: 30%; width: 3px; height: 3px;"></div>
     </div>
     <header>
-        <a href="#" class="nav-button" onclick="showSection('home')">Kezdőlap</a>
-        <a href="https://www.youtube.com/@balazs799" target="_blank" class="youtube-button">YouTube</a>
-        <a href="https://discord.gg/6ntBTSrxrS" target="_blank" class="discord-button">Discord</a>
-        <a href="#" class="nav-button" onclick="showSection('about')">Rólam</a>
-        <a href="#" class="nav-button" onclick="showSection('setup')">Setup</a>
+        <div class="dropdown">
+            <button class="dropbtn nav-button">Menü</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="showSection('home')">Kezdőlap</a>
+                <a href="https://www.youtube.com/@balazs799" target="_blank" class="youtube-button">YouTube</a>
+                <a href="https://discord.gg/6ntBTSrxrS" target="_blank" class="discord-button">Discord</a>
+                <a href="#" onclick="showSection('about')">Rólam</a>
+                <a href="#" onclick="showSection('setup')">Setup</a>
+            </div>
+        </div>
     </header>
     <div id="home">
         <img id="logo" src="logo1.png" alt="Logo"> 
