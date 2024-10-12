@@ -39,6 +39,8 @@
             display: flex;
             gap: 10px;
         }
+
+      
         .nav-button, .discord-button, .youtube-button {
             text-decoration: none;
             color: #fff;
@@ -53,7 +55,7 @@
             animation: whiteGlow 1.5s ease-in-out infinite alternate;
         }
 
-
+   
         .nav-button:hover, .discord-button:hover, .youtube-button:hover {
             transform: scale(1.05);
             box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
@@ -102,9 +104,10 @@
             color: #fff;
         }
 
+    
         @media (max-width: 600px) {
             header {
-                top: 10px;
+                top: 20px; 
                 right: 0;
                 left: 0;
                 justify-content: center;
@@ -113,6 +116,7 @@
             .nav-button, .discord-button, .youtube-button {
                 padding: 8px 12px;
                 font-size: 13px;
+                margin-top: 10px; 
             }
             #logo {
                 max-width: 90%;
